@@ -1,0 +1,24 @@
+
+.card-container {
+     display: grid;
+     grid-gap: 5px;
+     margin: 5px;
+     grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+     justify-content: center;
+     padding:  0 auto;
+     background: linear-gradient(to left,rgb(21, 233, 180),rgb(10, 170, 245));
+     border-radius: 10px;    
+     transition: all 0.75s;
+     box-shadow: 1px 1px 5px rgb(30, 31, 31);   
+      
+}
+
+.card-name {
+color:rgb(100, 220, 250);
+}
+.card-container:hover {
+     box-shadow: 1px 1px 15px rgb(165, 199, 191);
+     cursor: pointer;
+     transform: scale(0.95);
+     background: rgb(10, 170, 245);
+}
