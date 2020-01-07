@@ -1,20 +1,22 @@
 import React from "react";
 import logo from "./logo.svg";
 import Navbar from "react-bootstrap/Navbar";
+import "./Nav.css";
 
 export const Nav = () => {
      return(
           <>
-          <Navbar  fixed="top">
+          <Navbar fixed="top" style={{padding:"0"}} 
+          className="navBar">
           <Navbar.Brand
           style={{ 
-               fontSize: "calc(30px + 3vmin)",
-               margin:"0 auto 50px auto",
-               animation: "loading 3s linear infinite alternate",
-               background: "linear-gradient(to left,rgba(21, 233, 180, 1),rgba(241, 245, 247, 0.3))",
+               fontSize: "calc(30px + 3vmin)",          
+               animation: "loading 2.5s linear infinite alternate",
+               background: "linear-gradient(to left,rgb(21, 233, 180),rgb(10, 170, 245))",
                boxShadow: "2px 2px 10px rgb(21, 233, 180)",
-               width:"100%"
-          
+               width:"100%",
+               borderRadius: "10px",
+               margin: "auto 0px auto 0"        
                }}
           >
                <img
