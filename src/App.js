@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { CardList }from "../src/components/card-list/CardList"
 import { SearchBox } from "../src/components/searchBox/search-box";
 import Button from 'react-bootstrap/Button';
-import logo from "./logo.svg";
 
-
-
-
-
-// import logo from './logo.svg';
 import './App.css';
 import { Nav } from './components/nav/Nav';
 
@@ -65,17 +59,8 @@ class App extends Component {
       <h1 className="loading">Please wait ...</h1>:
 
       <div className="App"> 
-      <Nav />           
-        {/* <nav>
-        <ul style={{marginTop:"5%"}}>      
-          <li><h1 style={{ fontSize: "calc(30px + 3vmin)"}}>Robo Monsters</h1>
-          </li>
-          <li>
-            <img src={logo} className="App-logo" alt="logo"/></li>
-          </ul>
-          </nav> */}
-        
-        <SearchBox
+      <Nav />                
+      <SearchBox
         searchInput={this.searchChangeHandler}
         />   
         <Button variant="outline-info"
