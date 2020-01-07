@@ -3,14 +3,13 @@ import "./search-box.style.css";
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
-
 export const SearchBox = ({ searchInput }) => {
      return (
           <div>
                <InputGroup size="lg"
                 style={{
                     width: "30%",
-                    margin: "6% auto 4% auto"                   
+                    margin: "175px auto 50px auto"                   
                     }}
                >
                     <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-lg"

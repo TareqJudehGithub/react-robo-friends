@@ -10,6 +10,7 @@ import logo from "./logo.svg";
 
 // import logo from './logo.svg';
 import './App.css';
+import { Nav } from './components/nav/Nav';
 
 class App extends Component {
   constructor (){
@@ -63,15 +64,16 @@ class App extends Component {
       this.state.monsters.length===0?
       <h1 className="loading">Please wait ...</h1>:
 
-      <div className="App">            
-        <nav>
+      <div className="App"> 
+      <Nav />           
+        {/* <nav>
         <ul style={{marginTop:"5%"}}>      
           <li><h1 style={{ fontSize: "calc(30px + 3vmin)"}}>Robo Monsters</h1>
           </li>
           <li>
             <img src={logo} className="App-logo" alt="logo"/></li>
           </ul>
-          </nav>
+          </nav> */}
         
         <SearchBox
         searchInput={this.searchChangeHandler}
