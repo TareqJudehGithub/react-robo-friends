@@ -1,8 +1,0 @@
-.card-list {
-     display: grid;
-     grid-template-columns: repeat(auto-fill,minmax(200px, 300px));
-     grid-gap: 20px;
-     justify-content: center;
-     font-size: calc(11px + 1.2vmin);
-     text-shadow: 1px 1px 10px rgb(3, 59, 45);  
-}
