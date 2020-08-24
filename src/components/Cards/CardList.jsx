@@ -1,18 +1,18 @@
 import React from "react";
-import { Card } from "../Card/Card"
+import Card from "./Card"
 import "./CardList.style.css"
 
-export const CardList = ({ monstersList }) => {
+const CardList = ({ robots }) => {
      
      return (
           <div className="card-list">
           {           
-               monstersList.map((monster, index)=>{
-                    return (
+               robots.map(monster =>{
+                    return (            
                          <Card 
                          key={monster.id}
-                         id={monstersList[index].id}
-                         name={monstersList[index].name}                        
+                         id={monster.id}
+                         name={monster.name}                      
                          />
                     )
                })
@@ -20,3 +20,4 @@ export const CardList = ({ monstersList }) => {
           </div>    
      )     
 };
+export default  CardList;

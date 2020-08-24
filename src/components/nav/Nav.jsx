@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import Navbar from "react-bootstrap/Navbar";
 import "./Nav.css";
 
-export const Nav = () => {
+const Nav = () => {
      return(
           <>
           <Navbar fixed="top" style={{padding:"0"}} 
@@ -30,3 +30,4 @@ export const Nav = () => {
 </>
      )
 }
+export default  Nav;

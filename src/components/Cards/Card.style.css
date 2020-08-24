@@ -1,0 +1,25 @@
+
+.card-container {
+     margin: 5px;
+     padding:  0 auto;
+     background: linear-gradient(to left,rgb(21, 233, 180),rgb(10, 170, 245));
+     border-radius: 10px;    
+     transition: all 0.75s;
+     box-shadow: 1px 1px 2px rgb(247, 252, 252);   
+}
+
+.card-name {
+     color:rgb(16, 82, 99);
+     font-weight: 100;
+     text-shadow: 1px 1px 1px rgb(247, 252, 252);  
+     margin: 10px auto 0 auto;
+     box-shadow:  1px 1px 3px rgb(12, 83, 141);
+     width: fit-content;
+     padding: 0 5px;
+     }
+.card-container:hover {
+     box-shadow: 0px 2px 1px rgb(247, 252, 252);
+     cursor: pointer;
+     transform: scale(0.95);
+     background: rgb(10, 170, 245);
+}
