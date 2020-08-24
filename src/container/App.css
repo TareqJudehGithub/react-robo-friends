@@ -1,28 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: linear-gradient(to left, rgb(7, 27, 82, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  font-size: calc(10px + 1.5vmin); 
+}
+.App {
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+  color: rgb(100, 220, 250);
+  text-shadow: 2px 2px 15px rgb(2, 34, 26);
+}
 
 @keyframes loading {
   from {color: rgb(21, 233, 180);}
   to {color:rgb(10, 170, 245)}
 }
+
+@media (min-width: 350px) {
+  .loading{
+    margin-top: 17.5rem;
+  }
+}
 .loading {
+  text-align: center;
   color: rgb(100, 220, 250);
   text-shadow: 2px 2px 15px rgb(2, 34, 26);
-  margin-top: 10%;
-  text-align: center;
-  font-size: calc(15px + 3vmin);
-  font-family: 'Luckiest Guy', cursive;
+  font-size: calc(10px + 2vmin);
   font-weight: 100;
   animation: loading 3s linear 2s infinite alternate;
 }
 
-.App {
-  text-align: center;
-  font-family: 'Luckiest Guy', cursive;
-  color: rgb(100, 220, 250);
-  text-shadow: 2px 2px 15px rgb(2, 34, 26);
-  animation: loading 4s linear 2s infinite alternate;
- 
-}
 
 .App-logo {
   height: 6.5vmin;

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import CardList from "../components/Cards/CardList"
-import SearchBox from "../components/searchBox/search-box";
+// import SearchBox from "../components/searchBox/search-box";
+
 import Loading from "../components/Layout/Loading";
+import Scroll from "../components/Layout/Scroll";
 
 import './App.css';
-import Nav from '../components/nav/Nav';
+import Header from '../components/nav/Header';
 import Axios from 'axios';
 
 class App extends Component {
@@ -47,21 +49,19 @@ class App extends Component {
 
     return ( 
       <div className="App"> 
-      <Nav />                
-      <SearchBox
-        searchInput={this.searchChangeHandler}
-      />  
-      {
-            loading
-            ? 
-            <Loading />
-            :
-            <CardList 
-            robots={filteredRobots}
+      <Header searchInput={this.searchChangeHandler}/>                
+      <Scroll>
+        {
+          loading
+          ? 
+          <Loading />
+          :
+          <CardList 
+          robots={filteredRobots}
 
-            />
-          } 
-                
+          />
+        } 
+      </Scroll>  
       </div> 
   )
 }

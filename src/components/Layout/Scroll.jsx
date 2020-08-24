@@ -1,18 +1,15 @@
 import React from 'react';
-import "../containers/App.css";
 
-export const Loading = () => {
+
+export const Scroll = ({children}) => {
      return (
           <div style={{
-               textAlign:"center",
-               marginTop: "225px",
-               }}>
-              <h1 
-              style={{ animation: "loading 2.5s linear infinite alternate"}}
-              > 
-               Loading..please wait..
-               </h1>
+               overflowY: "hidden",
+               scrollBehavior: "smooth",
+               height: "auto"
+          }}> 
+              {children}
           </div>
      )
 }
-export default Loading;
+export default Scroll;
