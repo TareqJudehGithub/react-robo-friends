@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
+
+import Header from '../components/Header/Header';
 import CardList from "../components/Cards/CardList"
 
 import Loading from "../components/Layout/Loading";
 import Scroll from "../components/Layout/Scroll";
+import ErrorBoundry from "../components/ErrorBoundry/ErrorBoundry";
 
 import './App.css';
-import Header from '../components/Header/Header';
-import Axios from 'axios';
 
 class App extends Component {
   constructor (){
@@ -37,27 +39,25 @@ class App extends Component {
   };
 
   render() {
-
     const { robots, searchField, loading } = this.state;
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
-    })
+    });
 
     return ( 
       <div className="App"> 
-      <Header searchInput={this.searchChangeHandler}/>                
-      <Scroll>
-        {
-          loading
-          ? 
-          <Loading />
-          :
-          <CardList 
-          robots={filteredRobots}
-
-          />
-        } 
-      </Scroll>  
+         <ErrorBoundry>
+        <Header searchInput={this.searchChangeHandler}/>                
+        <Scroll>     
+          {
+            loading
+            ? 
+            <Loading />
+            :
+            <CardList robots={filteredRobots}/>
+          }   
+        </Scroll>
+        </ErrorBoundry> 
       </div> 
   )
 };
