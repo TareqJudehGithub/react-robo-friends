@@ -8,16 +8,11 @@ import FormControl from 'react-bootstrap/FormControl';
 const Header = ({ searchInput }) => {
      return(
           <>
-          <Navbar fixed="top" style={{padding:"0"}} 
-               className="navBar">
+          <Navbar fixed="top" style={{padding:"0"}} >
                <Navbar.Brand
+               className="header"
                style={{ 
                     fontSize: "calc(30px + 3vmin)",          
-                    animation: "loading 2.5s linear infinite alternate",
-                    background: "linear-gradient(to left,rgb(21, 233, 180),rgb(10, 170, 245))",
-                    boxShadow: "2px 2px 10px rgb(21, 233, 180)",
-                    width:"100%",
-                    borderRadius: "10px",
                     margin: "auto 0px auto 0"        
                     }}
                >
