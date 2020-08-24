@@ -4,7 +4,7 @@ export const Loading = () => {
      return (
           <div className="loading">
               <h1 
-              style={{ animation: "loading 2.5s linear infinite alternate"}}
+              style={{ animation: "loading 1s linear infinite alternate"}}
               > 
                Loading..please wait..
                </h1>

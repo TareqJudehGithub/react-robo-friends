@@ -5,7 +5,7 @@ import Loading from "../components/Layout/Loading";
 import Scroll from "../components/Layout/Scroll";
 
 import './App.css';
-import Header from '../components/nav/Header';
+import Header from '../components/Header/Header';
 import Axios from 'axios';
 
 class App extends Component {
@@ -19,20 +19,18 @@ class App extends Component {
     }
   }
 
-  // properties:
+  // Search robots method:
   searchChangeHandler = (event) => {
     this.setState({searchField: event.target.value})
   }
 
-  async componentDidMount(){
-
-    this.setState({ loading: true})
   // Fetching API data with Axios:
+  async componentDidMount(){
+    this.setState({ loading: true});
     try {
-      
       const response = await Axios.get("https://gorest.co.in/public-api/users")
       this.setState({ robots: response.data.data});
-      this.setState({ loading: false})
+      this.setState({ loading: false});
     } catch (error) {
       return console.log(error.message);
     }
@@ -44,7 +42,6 @@ class App extends Component {
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })
-
 
     return ( 
       <div className="App"> 
@@ -63,8 +60,7 @@ class App extends Component {
       </Scroll>  
       </div> 
   )
-}
+};
   
-}
-
+};
 export default App;
