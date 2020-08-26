@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { connect,  } from "react-redux";
 
 import Header from '../components/Header/Header';
 import CardList from "../components/Cards/CardList"
@@ -8,6 +9,8 @@ import Loading from "../components/Layout/Loading";
 import Scroll from "../components/Layout/Scroll";
 import ErrorBoundry from "../components/ErrorBoundry/ErrorBoundry";
 
+import { setSearchField } from "../redux/SearchField/actions";
+
 import './App.css';
 
 class App extends Component {
@@ -15,16 +18,16 @@ class App extends Component {
     super()
     this.state = {
       robots: [],
-      searchField: "",
+      // searchField: "",
       loading: false,
       listOn: true
     }
   }
 
   // Search robots method:
-  searchChangeHandler = (event) => {
-    this.setState({searchField: event.target.value})
-  }
+  // searchChangeHandler = (event) => {
+  //   this.setState({searchField: event.target.value})
+  // }
 
   // Fetching API data with Axios:
   async componentDidMount(){
@@ -36,10 +39,13 @@ class App extends Component {
     } catch (error) {
       return console.log(error.message);
     }
+
   };
 
   render() {
-    const { robots, searchField, loading } = this.state;
+    const { robots, loading } = this.state;
+    const { searchField, onSearchChange } = this.props;
+
     const filteredRobots = robots.filter(robot => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     });
@@ -47,7 +53,7 @@ class App extends Component {
     return ( 
       <div className="App"> 
          <ErrorBoundry>
-        <Header searchInput={this.searchChangeHandler}/>                
+        <Header searchInput={onSearchChange}/>                
         <Scroll>     
           {
             loading
@@ -63,4 +69,11 @@ class App extends Component {
 };
   
 };
-export default App;
+const mapStateToProps = state => ({
+  searchField: state.searchField
+});
+const mapDispatchToProps = dispatch => ({
+  onSearchChange: event => dispatch(setSearchField(event.target.value))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App) ;
